@@ -19,7 +19,7 @@
 > ### ⚠️ Platform note: Windows only
 > This client **supports Windows 10/11 (x64) only** - **it does not run on macOS / Linux**.
 >
-> 💡 **For Mac users**: the official DSH itself is cross-platform - run `npx dsh web` in a terminal and open `http://127.0.0.1:3080` in a browser for the same experience; for a native Mac window, see [anywhere-labs/deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) (macOS + Windows desktop edition).
+> 💡 **For Mac users**: the official DSH itself is cross-platform - run `npx dsh web` in a terminal and open `http://127.0.0.1:3080` in a browser for the same experience.
 
 ## What is this?
 
