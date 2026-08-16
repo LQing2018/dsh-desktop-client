@@ -25,7 +25,7 @@
 ## 安装插件
 
 ```sh
-dsh plugin --profile web add dsh-desktop-client
+dsh plugin --profile web add @lqing2018/dsh-desktop-client
 ```
 
 然后对 agent 说：*"桌面客户端装了吗？"* 或 *"打开桌面客户端"*。
