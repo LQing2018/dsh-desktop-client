@@ -39,6 +39,10 @@
 
 > 之后每次启动都是**秒开**，不会再等。
 
+启动后你会看到这样的界面（示意）：
+
+![DeepSeek Harness Windows 界面](../assets/dsh-hero.jpg)
+
 ---
 
 ## 3. 配置模型 API Key（必做）
