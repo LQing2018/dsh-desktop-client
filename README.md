@@ -80,7 +80,7 @@ Puts the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) loc
 
 ## Companion plugin
 
-Let the DeepSeek Harness agent operate the desktop client:
+Let the DeepSeek Harness agent operate the desktop client (check / launch / **auto-install** / **update**):
 
 ```sh
 dsh plugin --profile web add @lqing2018/dsh-desktop-client
@@ -88,8 +88,24 @@ dsh plugin --profile web add @lqing2018/dsh-desktop-client
 
 Then just ask:
 
-- *"Is the desktop client installed?"* → agent runs `desktop_client` to check install status & server port
-- *"Open the desktop client"* → agent launches the client window
+| You say | What the agent does |
+|---|---|
+| *"Is the desktop client installed?"* | `status`: check install + server port |
+| *"Open the desktop client"* | `launch`: open the client window |
+| *"Install the desktop client for me"* ⭐ | `install`: **download the latest release and install silently** - zero manual steps |
+| *"Is there a new version?"* | `version`: compare local vs latest GitHub release |
+| *"Update the desktop client"* | `update`: upgrade to the latest release |
+
+> On blocked networks `install` fails gracefully and returns the manual download URL.
+
+**Prefer no npm plugin?** A filesystem Skill form is also available:
+
+```powershell
+git clone https://github.com/LQing2018/dsh-desktop-client.git
+Copy-Item -Recurse dsh-desktop-client\skills\dsh-desktop-client "$env:USERPROFILE\.dsh\skills\"
+```
+
+Then say "use the dsh-desktop-client skill" in a DSH conversation.
 
 ## FAQ
 
@@ -100,6 +116,7 @@ Then just ask:
 | Port already in use | Change it via `client.json` (see Daily usage) |
 | Fails after moving the folder | Delete the `dsh-home` folder once; it rebuilds on next launch |
 | Forgot API key / switch account | Re-enter it in Settings → Models |
+| How to upgrade | with the plugin: just say "update the desktop client"; or re-run the Setup installer (overwrites in place) |
 | How to fully uninstall | See below |
 
 ## Uninstall
@@ -131,6 +148,15 @@ Then just ask:
 
 Built on [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness), which provides the core agent capabilities, plugin system and Web UI. This project adds the **Windows desktop shell** (window, local server hosting, no-install packaging) and the companion client-management plugin.
 
-## License
+## Star History
 
+<a href="https://star-history.dera.page/#LQing2018/dsh-desktop-client&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=LQing2018%2Fdsh-desktop-client&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=LQing2018%2Fdsh-desktop-client&type=Date" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=LQing2018%2Fdsh-desktop-client&type=Date" />
+  </picture>
+</a>
+
+## License
 MIT
