@@ -40,7 +40,7 @@ npm publish --access public
 安装验证（在另一台有 dsh 的机器上）：
 
 ```sh
-dsh plugin --profile web add dsh-desktop-client
+dsh plugin --profile web add @lqing2018/dsh-desktop-client
 ```
 
 ## 3. 发布便携客户端 Release
@@ -66,6 +66,6 @@ gh release create v0.1.0 DeepSeek-Harness-Portable.zip --title "v0.1.0" --notes 
 ## 5. 上线后检查
 
 - [ ] https://github.com/topics/dsh-plugin 能搜到你的仓库
-- [ ] `dsh plugin --profile web add dsh-desktop-client` 安装成功
+- [ ] `dsh plugin --profile web add @lqing2018/dsh-desktop-client` 安装成功
 - [ ] Release 里 zip 可下载、无 node 机器上双击可用
 - [ ] README 中英文齐全（含截图更佳）
