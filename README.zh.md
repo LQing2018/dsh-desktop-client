@@ -16,6 +16,11 @@
 
 <sub>[English](README.md) · 中文</sub>
 
+> ### ⚠️ 平台说明：仅支持 Windows
+> 本客户端**仅支持 Windows 10/11（64 位）**，**macOS / Linux 无法使用**。
+>
+> 💡 **Mac 用户替代方案**：官方 DSH 本身是跨平台的 -- 终端运行 `npx dsh web`，浏览器打开 `http://127.0.0.1:3080`，功能完全相同；想要 Mac 原生窗口，可使用 [anywhere-labs/deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop)（macOS + Windows 双平台桌面版）。
+
 ## 这是什么
 
 DeepSeek Harness 官方提供的是**浏览器 Web 版**与**命令行版**；本项目的定位就是它的 **Windows 桌面版**：同一个 DSH，装进原生 Windows 窗口，把整个运行环境（Node 运行时 + DSH 服务端 + 界面）打包在一起，开箱即用。
