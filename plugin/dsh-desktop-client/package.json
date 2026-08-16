@@ -1,42 +1,42 @@
 {
-  "name": "dsh-desktop-client",
-  "description": "DeepSeek Harness desktop client helper: locate the native WebView2 client and launch it from the agent",
-  "version": "0.1.0",
-  "type": "module",
-  "main": "lib/index.js",
-  "exports": {
-    ".": {
-      "default": "./lib/index.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "lib"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "dsh-plugin",
-    "deepseek-harness",
-    "desktop-client",
-    "webview2",
-    "cordis"
-  ],
-  "@deepseek-ai/cordis": {
-    "description": {
-      "en": "Desktop client helper: locate & launch the native DeepSeek Harness client",
-      "zh": "桌面客户端助手：定位并启动 DeepSeek Harness 原生客户端"
-    },
-    "services": {
-      "required": [
-        "tools"
-      ]
-    }
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+    "name":  "@lqing2018/dsh-desktop-client",
+    "description":  "DeepSeek Harness desktop client helper: locate the native WebView2 client and launch it from the agent",
+    "version":  "0.1.1",
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  {
+                              "default":  "./lib/index.js"
+                          },
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib"
+              ],
+    "license":  "MIT",
+    "keywords":  [
+                     "dsh-plugin",
+                     "deepseek-harness",
+                     "desktop-client",
+                     "webview2",
+                     "cordis"
+                 ],
+    "@deepseek-ai/cordis":  {
+                                "description":  {
+                                                    "en":  "Desktop client helper: locate \u0026 launch the native DeepSeek Harness client",
+                                                    "zh":  "桌面客户端助手：定位并启动 DeepSeek Harness 原生客户端"
+                                                },
+                                "services":  {
+                                                 "required":  [
+                                                                  "tools"
+                                                              ]
+                                             }
+                            },
+    "peerDependencies":  {
+                             "@deepseek-ai/cordis":  "^4.0.1",
+                             "@deepseek-ai/dsh-tools":  "^0.1.0-rc.6"
+                         },
+    "engines":  {
+                    "node":  "\u003e=18"
+                }
 }
