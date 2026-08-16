@@ -1,0 +1,20 @@
+# portable client artifacts — never commit these (create via GitHub Releases)
+dist/
+releases/
+*.zip
+node.exe
+WebView2Loader.dll
+Microsoft.Web.WebView2.*.dll
+DeepSeek Harness.exe
+DeepSeek Harness.exe.WebView2/
+dsh-home/
+server.pid
+client.json
+
+# node
+node_modules/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
