@@ -27,6 +27,8 @@
 
 > ⚠️ **环境要求**：Windows 10 / 11（64 位）+ WebView2 Runtime（Win11 和最新版 Edge 自带；若缺失，程序会提示，或[点此下载](https://developer.microsoft.com/microsoft-edge/webview2/)）。
 > ⚠️ 若杀毒软件拦截，请选择「允许运行」（本程序完全本地运行、无网络上传行为，仅连接本地 `127.0.0.1` 服务）。
+>
+> ❌ **macOS / Linux 无法使用**本客户端。Mac 用户请运行官方 `npx dsh web` 后用浏览器访问，详见[仓库主页平台说明](../README.zh.md#平台说明仅支持-windows)。
 
 ---
 
@@ -92,6 +94,7 @@
 
 | 症状 | 原因与解决 |
 |---|---|
+| **Mac / 苹果电脑能用吗？** | ❌ 不能，客户端仅支持 Windows。Mac 请用官方 Web 版（`npx dsh web` + 浏览器），见[主页平台说明](../README.zh.md) |
 | 双击没反应 / 白屏 | ① 未装 WebView2 Runtime → 按上文安装；② 被安全软件拦截 → 允许运行；③ 换个目录重试 |
 | 首次启动超过 2 分钟 | 偶发；关掉窗口，运行 `stop-server.cmd`，再重新打开客户端 |
 | 提示「端口被占用」 | 有别的程序占了 3080 → 按上文「换端口」 |
