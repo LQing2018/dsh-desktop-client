@@ -25,7 +25,7 @@ Requirements: Windows 10/11 x64 with WebView2 Runtime (built into Edge / Win11).
 ## Install the plugin
 
 ```sh
-dsh plugin --profile web add dsh-desktop-client
+dsh plugin --profile web add @lqing2018/dsh-desktop-client
 ```
 
 Then ask the agent: *"is the desktop client installed?"* or *"open the desktop client"*.
