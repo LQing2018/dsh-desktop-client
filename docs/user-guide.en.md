@@ -39,6 +39,10 @@ The first start initializes the local AI service — **please wait**:
 
 > Every later launch is **instant**.
 
+This is what the window looks like after launch:
+
+![DeepSeek Harness for Windows UI](../assets/dsh-hero.jpg)
+
 ---
 
 ## 3. Add your model API key (required)
