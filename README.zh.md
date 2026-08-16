@@ -80,7 +80,7 @@ DeepSeek Harness 官方提供的是**浏览器 Web 版**与**命令行版**；�
 
 ## 配套插件
 
-让 DeepSeek Harness 的 agent 能直接操作桌面客户端：
+让 DeepSeek Harness 的 agent 能直接操作桌面客户端（检测 / 启动 / **自动安装** / **升级**）：
 
 ```sh
 # 安装插件（在已运行 dsh web 的机器上）
@@ -89,8 +89,24 @@ dsh plugin --profile web add @lqing2018/dsh-desktop-client
 
 安装后，在对话里直接说：
 
-- *"桌面客户端装了吗？"* → agent 调用 `desktop_client` 检测安装状态与服务端口
-- *"帮我打开桌面客户端"* → agent 启动客户端窗口
+| 你说 | agent 会做什么 |
+|---|---|
+| *"桌面客户端装了吗？"* | `status`：检测安装状态与服务端口 |
+| *"帮我打开桌面客户端"* | `launch`：启动客户端窗口 |
+| *"帮我安装桌面客户端"* ⭐ | `install`：**自动下载最新 Release 静默安装并启动**（全程无需你动手） |
+| *"客户端有新版本吗？"* | `version`：对比本地版本与 GitHub 最新 Release |
+| *"升级桌面客户端"* | `update`：自动升级到最新版 |
+
+> 网络不佳时 `install` 会优雅失败，并附上手动下载链接。
+
+**不想装 npm 插件？** 本仓库还提供文件系统 Skill 形态（免 npm）：
+
+```powershell
+git clone https://github.com/LQing2018/dsh-desktop-client.git
+Copy-Item -Recurse dsh-desktop-client\skills\dsh-desktop-client "$env:USERPROFILE\.dsh\skills\"
+```
+
+之后在 DSH 对话里说「启动 dsh-desktop-client skill」即可获得同样的能力。
 
 ## 常见问题
 
@@ -101,6 +117,7 @@ dsh plugin --profile web add @lqing2018/dsh-desktop-client
 | 端口被占用 | 按上文「换端口」改 `client.json` |
 | 移动文件夹后启动失败 | 删除一次 `dsh-home` 文件夹，重新启动会自动重建 |
 | 忘了 API Key / 想换账号 | 设置 → Models 重新填写即可 |
+| 怎么升级到新版本 | 装了插件直接说「升级桌面客户端」；或重新下载运行 Setup 安装器（自动覆盖安装） |
 | 想彻底卸载 | 见下节 |
 
 ## 卸载
@@ -131,6 +148,16 @@ dsh plugin --profile web add @lqing2018/dsh-desktop-client
 ## 与官方项目的关系
 
 本项目基于 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 构建，官方项目提供核心智能体能力、插件系统与 Web UI；本项目负责 **Windows 桌面封装**（窗口、本地服务托管、免安装打包）与配套的客户端管理插件。
+
+## Star History
+
+<a href="https://star-history.dera.page/#LQing2018/dsh-desktop-client&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=LQing2018%2Fdsh-desktop-client&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=LQing2018%2Fdsh-desktop-client&type=Date" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=LQing2018%2Fdsh-desktop-client&type=Date" />
+  </picture>
+</a>
 
 ## 许可证
 
