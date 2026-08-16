@@ -91,6 +91,7 @@ The client ships without keys — add your own:
 
 | Symptom | Cause & fix |
 |---|---|
+| **Does it work on Mac?** | ❌ No - Windows only. On macOS use the official Web edition (`npx dsh web` + browser), see the [platform note](../README.md) |
 | Nothing happens / white screen | ① WebView2 Runtime missing → install it; ② blocked by security software → allow; ③ try another folder |
 | First launch takes >2 min | Rare — close the window, run `stop-server.cmd`, reopen the client |
 | "Port already in use" | Another program took port 3080 → change it via `client.json` |
