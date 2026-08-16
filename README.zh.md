@@ -1,18 +1,24 @@
-# 🐳 dsh-desktop-client
+# 🐳 DeepSeek Harness for Windows（桌面版）
 
-> DeepSeek Harness 自包含 Windows 桌面客户端 + 配套插件
-> **无需安装 Node.js / npm / 任何服务**，双击即用。
+> **DeepSeek Harness 的 Windows 桌面客户端** —— 无需安装 Node.js / npm / 任何服务，双击即用。
+
+<p align="center">
+  <img src="assets/dsh-hero.jpg" alt="DeepSeek Harness Windows 桌面客户端" width="100%">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/npm/v/@lqing2018/dsh-desktop-client?label=npm&color=4FC3F7" alt="npm version">
   <img src="https://img.shields.io/badge/license-MIT-2EA44F" alt="MIT License">
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-4493F8" alt="Windows 10/11 x64">
   <img src="https://img.shields.io/badge/topic-dsh--plugin-8A2BE2" alt="dsh-plugin">
+  <img src="https://img.shields.io/badge/DSH-Desktop%20Edition-47848F" alt="DSH Desktop Edition">
 </p>
 
 <sub>[English](README.md) · 中文</sub>
 
 ## 这是什么
+
+DeepSeek Harness 官方提供的是**浏览器 Web 版**与**命令行版**；本项目的定位就是它的 **Windows 桌面版**：同一个 DSH，装进原生 Windows 窗口，把整个运行环境（Node 运行时 + DSH 服务端 + 界面）打包在一起，开箱即用。
 
 把 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的本地 Web UI 装进一个**原生 Windows 窗口**，并把整个运行环境（Node 运行时 + DSH 服务端 + 界面）打包在一起：
 
