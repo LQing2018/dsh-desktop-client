@@ -1,18 +1,24 @@
-# 🐳 dsh-desktop-client
+# 🐳 DeepSeek Harness for Windows
 
-> Self-contained Windows desktop client for DeepSeek Harness + companion plugin
-> **No Node.js / npm / server setup required.** Double-click and go.
+> **The Windows desktop client for DeepSeek Harness** — no Node.js / npm / server setup required. Double-click and go.
+
+<p align="center">
+  <img src="assets/dsh-hero.jpg" alt="DeepSeek Harness for Windows desktop client" width="100%">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/npm/v/@lqing2018/dsh-desktop-client?label=npm&color=4FC3F7" alt="npm version">
   <img src="https://img.shields.io/badge/license-MIT-2EA44F" alt="MIT License">
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-4493F8" alt="Windows 10/11 x64">
   <img src="https://img.shields.io/badge/topic-dsh--plugin-8A2BE2" alt="dsh-plugin">
+  <img src="https://img.shields.io/badge/DSH-Desktop%20Edition-47848F" alt="DSH Desktop Edition">
 </p>
 
 <sub>English · [中文](README.zh.md)</sub>
 
 ## What is this?
+
+The official DeepSeek Harness ships as a **browser Web UI** and a **CLI**. This project is its **Windows desktop edition**: the same DSH, wrapped in a native Windows window with the whole runtime (Node + DSH server + UI) bundled together, ready out of the box.
 
 Puts the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) local Web UI into a **native Windows window**, bundled with the whole runtime (Node + DSH server + UI) in one package:
 
