@@ -16,6 +16,11 @@
 
 <sub>English · [中文](README.zh.md)</sub>
 
+> ### ⚠️ Platform note: Windows only
+> This client **supports Windows 10/11 (x64) only** - **it does not run on macOS / Linux**.
+>
+> 💡 **For Mac users**: the official DSH itself is cross-platform - run `npx dsh web` in a terminal and open `http://127.0.0.1:3080` in a browser for the same experience; for a native Mac window, see [anywhere-labs/deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) (macOS + Windows desktop edition).
+
 ## What is this?
 
 The official DeepSeek Harness ships as a **browser Web UI** and a **CLI**. This project is its **Windows desktop edition**: the same DSH, wrapped in a native Windows window with the whole runtime (Node + DSH server + UI) bundled together, ready out of the box.
