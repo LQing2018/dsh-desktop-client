@@ -1,9 +1,9 @@
-# 🐳 DeepSeek Harness for Windows
+# 🐳 DeepSeek Harness for Windows（桌面版）
 
-> **The Windows desktop client for DeepSeek Harness** — no Node.js / npm / server setup required. Double-click and go.
+> **DeepSeek Harness 的 Windows 桌面客户端** —— 无需安装 Node.js / npm / 任何服务，双击即用。
 
 <p align="center">
-  <img src="assets/dsh-hero.jpg" alt="DeepSeek Harness for Windows desktop client" width="100%">
+  <img src="assets/dsh-hero.jpg" alt="DeepSeek Harness Windows 桌面客户端" width="100%">
 </p>
 
 <p align="center">
@@ -14,139 +14,143 @@
   <img src="https://img.shields.io/badge/DSH-Desktop%20Edition-47848F" alt="DSH Desktop Edition">
 </p>
 
-<sub>English · [中文](README.zh.md)</sub>
+<sub>[English](README.en.md) · 中文</sub>
 
-> ### ⚠️ Platform note: Windows only
-> This client **supports Windows 10/11 (x64) only** - **it does not run on macOS / Linux**.
+> ### ⚠️ 平台说明：仅支持 Windows
+> 本客户端**仅支持 Windows 10/11（64 位）**，**macOS / Linux 无法使用**。
 >
-> 💡 **For Mac users**: the official DSH itself is cross-platform - run `npx dsh web` in a terminal and open `http://127.0.0.1:3080` in a browser for the same experience.
+> 💡 **Mac 用户替代方案**：官方 DSH 本身是跨平台的 -- 终端运行 `npx dsh web`，浏览器打开 `http://127.0.0.1:3080`，功能完全相同。
 
-## What is this?
+## 这是什么
 
-The official DeepSeek Harness ships as a **browser Web UI** and a **CLI**. This project is its **Windows desktop edition**: the same DSH, wrapped in a native Windows window with the whole runtime (Node + DSH server + UI) bundled together, ready out of the box.
+DeepSeek Harness 官方提供的是**浏览器 Web 版**与**命令行版**；本项目的定位就是它的 **Windows 桌面版**：同一个 DSH，装进原生 Windows 窗口，把整个运行环境（Node 运行时 + DSH 服务端 + 界面）打包在一起，开箱即用。
 
-Puts the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) local Web UI into a **native Windows window**, bundled with the whole runtime (Node + DSH server + UI) in one package:
+把 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的本地 Web UI 装进一个**原生 Windows 窗口**，并把整个运行环境（Node 运行时 + DSH 服务端 + 界面）打包在一起：
 
-- **For end users**: download → double-click → add your API key → start chatting. No terminal required.
-- **For the agent**: the companion `@lqing2018/dsh-desktop-client` plugin lets the harness agent locate and launch the desktop client for you.
+- **普通用户**：下载 → 双击 → 填写 API Key → 开始使用，全程不需要碰命令行
+- **插件**：配套的 `@lqing2018/dsh-desktop-client` 插件让 agent 能帮你定位、启动桌面客户端
 
-## Features
+## 功能特性
 
-| Feature | Description |
+| 特性 | 说明 |
 |---|---|
-| ⚡ Zero setup | Node runtime, server and UI ship together — no Node.js / npm / services to install |
-| 📦 Two flavors | Single-file installer (recommended) or portable ZIP (USB-friendly) |
-| 🔧 Self-managed server | Client starts a hidden background server automatically; port conflicts handled |
-| 🐳 Native window | WebView2 engine + whale icon, no browser chrome |
-| 🤖 Companion plugin | Agent can check / launch the client via the `desktop_client` tool |
+| ⚡ 免安装免依赖 | node 运行时、服务端、界面全打包，无需安装 Node.js / npm / 任何服务 |
+| 📦 两种形态 | 单文件安装器（推荐）或绿色便携版（U 盘可带） |
+| 🔧 服务自管理 | 客户端自动拉起隐藏的后台服务，端口冲突自动规避 |
+| 🐳 原生窗口 | WebView2 内核 + 鲸鱼图标，无浏览器边框 |
+| 🤖 配套插件 | agent 可通过 `desktop_client` 工具检测/启动客户端 |
 
-## Quick start (2 minutes)
+## 快速开始（2 分钟）
 
-### Option A: Single-file installer (recommended)
+### 方式 A：单文件安装器（普通用户推荐）
 
-1. Open [Releases](https://github.com/LQing2018/dsh-desktop-client/releases) and download **`DeepSeek-Harness-Setup.exe`**
-2. **Double-click** it — it extracts to `%LOCALAPPDATA%\DeepSeek-Harness-Portable` and launches the client
-3. First launch initializes the local server (**30–60 s**, that's normal) — please wait
-4. Click **Settings (gear) → Models** in the top-right and add your model API key (e.g. DeepSeek API)
-5. 🎉 Start chatting. Every later launch is instant.
+> 🇨🇳 **国内用户**：GitHub 可能无法直连，请从 **Gitee 镜像**下载：
+> https://gitee.com/fallfeeling/dsh-desktop-client/releases/download/v0.1.0/DeepSeek-Harness-Setup.exe
 
-### Option B: Portable ZIP (USB / no install)
+1. 打开 [Releases](https://github.com/LQing2018/dsh-desktop-client/releases)，下载 **`DeepSeek-Harness-Setup.exe`**
+2. **双击**运行 → 自动解压到 `%LOCALAPPDATA%\DeepSeek-Harness-Portable` 并启动客户端
+3. 首次启动需 **30~60 秒**初始化本地服务（属正常现象），请稍等
+4. 在窗口右上角 **设置（齿轮）→ Models** 填入你的模型 API Key（如 DeepSeek API）
+5. 🎉 开始对话。以后每次启动都是秒开
 
-1. Download **`DeepSeek-Harness-Portable.zip`**
-2. Unzip anywhere (USB drive works)
-3. Run **`DeepSeek Harness.exe`** inside the folder — same steps as above
+### 方式 B：绿色便携版（U 盘 / 免安装）
 
-> **Requirements**: Windows 10 / 11 (x64) with the WebView2 Runtime (bundled with Edge / Win11; [install here](https://developer.microsoft.com/microsoft-edge/webview2/) if missing)
+1. 下载 **`DeepSeek-Harness-Portable.zip`**
+2. 解压到任意位置（U 盘、移动硬盘都可以）
+3. 双击文件夹里的 **`DeepSeek Harness.exe`**，步骤同上
 
-## First-run walkthrough
+> **环境要求**：Windows 10 / 11（64 位），带 WebView2 Runtime（新版 Edge / Win11 自带；缺失时 [点此安装](https://developer.microsoft.com/microsoft-edge/webview2/)）
 
-1. **Download** — see Quick start above
-2. **Launch** — a whale-icon window appears; the first start initializes the local server (the window shows up by itself after a short wait)
-3. **Add your API key** — Settings (gear icon) → Models, add a model and paste your key (DeepSeek, OpenAI-compatible, etc.)
-4. **Chat** — type in the input box. Long-running tasks keep running in the background; multiple sessions are supported
+## 首次使用详细步骤
 
-> Detailed step-by-step guide: [User Guide](docs/user-guide.en.md)
+1. **下载**：见上方「快速开始」
+2. **启动**：双击后出现鲸鱼图标窗口；首次启动会先初始化本地服务（右下角托盘无窗口时耐心等待，窗口自动出现）
+3. **配置密钥**：点击窗口右上角 **设置（齿轮图标）→ Models**，添加模型并填入 API Key（DeepSeek、OpenAI 兼容等均可）
+4. **开始使用**：在输入框直接对话；支持长任务后台运行、多会话管理
 
-## Daily usage
+> 详细图文版见 [用户指南](docs/user-guide.md)
 
-| Action | How |
+## 日常使用
+
+| 操作 | 方法 |
 |---|---|
-| Open the client | Desktop shortcut, or `DeepSeek Harness.exe` in the install folder |
-| Close the window | Click ✕ — **the server keeps running** (background tasks aren't interrupted) |
-| Stop the server | Double-click **`stop-server.cmd`** in the install folder (only kills the server the client spawned) |
-| Change port | Create `client.json` in the install folder: `{"port": 1234}` |
-| Where is my data | Sessions live in `dsh-home\sessions`; API keys in `dsh-home` (don't share the folder) |
-| Move / backup | Copy the whole folder; after moving, **delete `dsh-home` once** and it rebuilds automatically |
+| 打开客户端 | 双击桌面快捷方式 / 安装目录下的 `DeepSeek Harness.exe` |
+| 关闭窗口 | 点窗口 ✕ —— **服务会继续在后台运行**（长任务不中断） |
+| 完全停止服务 | 双击安装目录下的 **`stop-server.cmd`**（只结束客户端拉起的服务，不误伤其他程序） |
+| 换端口 | 在安装目录新建 `client.json`，内容 `{"port": 1234}` |
+| 数据在哪 | 会话记录在 `dsh-home\sessions`，API Key 在 `dsh-home` 内（请勿分享整个目录） |
+| 移动/备份 | 整个文件夹可复制移动；移动后**删除一次 `dsh-home`** 即可自动重建 |
 
-## Companion plugin
+## 配套插件
 
-Let the DeepSeek Harness agent operate the desktop client (check / launch / **auto-install** / **update**):
+让 DeepSeek Harness 的 agent 能直接操作桌面客户端（检测 / 启动 / **自动安装** / **升级**）：
 
 ```sh
+# 安装插件（在已运行 dsh web 的机器上）
 dsh plugin --profile web add @lqing2018/dsh-desktop-client
 ```
 
-Then just ask:
+安装后，在对话里直接说：
 
-| You say | What the agent does |
+| 你说 | agent 会做什么 |
 |---|---|
-| *"Is the desktop client installed?"* | `status`: check install + server port |
-| *"Open the desktop client"* | `launch`: open the client window |
-| *"Install the desktop client for me"* ⭐ | `install`: **download the latest release and install silently** - zero manual steps |
-| *"Is there a new version?"* | `version`: compare local vs latest GitHub release |
-| *"Update the desktop client"* | `update`: upgrade to the latest release |
+| *"桌面客户端装了吗？"* | `status`：检测安装状态与服务端口 |
+| *"帮我打开桌面客户端"* | `launch`：启动客户端窗口 |
+| *"帮我安装桌面客户端"* ⭐ | `install`：**自动下载最新 Release 静默安装并启动**（全程无需你动手） |
+| *"客户端有新版本吗？"* | `version`：对比本地版本与 GitHub 最新 Release |
+| *"升级桌面客户端"* | `update`：自动升级到最新版 |
 
-> On blocked networks `install` fails gracefully and returns the manual download URL.
+> 网络不佳时 `install` 会优雅失败，并附上手动下载链接。
 
-**Prefer no npm plugin?** A filesystem Skill form is also available:
+**不想装 npm 插件？** 本仓库还提供文件系统 Skill 形态（免 npm）：
 
 ```powershell
 git clone https://github.com/LQing2018/dsh-desktop-client.git
 Copy-Item -Recurse dsh-desktop-client\skills\dsh-desktop-client "$env:USERPROFILE\.dsh\skills\"
 ```
 
-Then say "use the dsh-desktop-client skill" in a DSH conversation.
+之后在 DSH 对话里说「启动 dsh-desktop-client skill」即可获得同样的能力。
 
-## FAQ
+## 常见问题
 
-| Problem | Solution |
+| 问题 | 解决方法 |
 |---|---|
-| Nothing happens / white screen | Make sure WebView2 Runtime is installed; retry after disabling antivirus interception |
-| First launch is slow | Normal — first boot initializes the local server (30–60 s); later launches are instant |
-| Port already in use | Change it via `client.json` (see Daily usage) |
-| Fails after moving the folder | Delete the `dsh-home` folder once; it rebuilds on next launch |
-| Forgot API key / switch account | Re-enter it in Settings → Models |
-| How to upgrade | with the plugin: just say "update the desktop client"; or re-run the Setup installer (overwrites in place) |
-| How to fully uninstall | See below |
+| 双击没反应 / 白屏 | 确认已装 WebView2 Runtime；关闭杀毒软件拦截后重试 |
+| 首次启动很久 | 正常，首次要初始化本地服务（30~60 秒），之后秒开 |
+| 端口被占用 | 按上文「换端口」改 `client.json` |
+| 移动文件夹后启动失败 | 删除一次 `dsh-home` 文件夹，重新启动会自动重建 |
+| 忘了 API Key / 想换账号 | 设置 → Models 重新填写即可 |
+| 怎么升级到新版本 | 装了插件直接说「升级桌面客户端」；或重新下载运行 Setup 安装器（自动覆盖安装） |
+| 想彻底卸载 | 见下节 |
 
-## Uninstall
+## 卸载
 
-- **Installer edition**: delete the whole `%LOCALAPPDATA%\DeepSeek-Harness-Portable` folder
-- **Portable edition**: delete the whole unzipped folder
-- **Plugin**: `dsh plugin --profile web remove @lqing2018/dsh-desktop-client`
+- **安装器版**：删除 `%LOCALAPPDATA%\DeepSeek-Harness-Portable` 整个文件夹
+- **绿色版**：删除解压出来的整个文件夹
+- **插件**：`dsh plugin --profile web remove @lqing2018/dsh-desktop-client`
 
-## Docs
+## 文档索引
 
-| Doc | Content |
+| 文档 | 内容 |
 |---|---|
-| [User Guide](docs/user-guide.en.md) | Install, configure, daily use, troubleshooting |
-| [用户指南](docs/user-guide.md) | 中文详细图文指南 |
-| [PUBLISH.md](PUBLISH.md) | Maintainers: release flow (npm / GitHub / plugin marketplace) |
+| [用户指南](docs/user-guide.md) | 安装、配置、日常使用、排查（详细图文步骤） |
+| [User Guide (English)](docs/user-guide.en.md) | 英文版用户指南 |
+| [PUBLISH.md](PUBLISH.md) | 开发者：发布流程（npm / GitHub / 插件市场） |
 
-## Development
+## 开发者
 
 ```powershell
-# Build the portable client folder from a local DeepSeek Harness install
+# 从本地 DeepSeek Harness 安装构建便携客户端目录
 .\scripts\build-portable.ps1 -Source D:\path\to\deepseek-harness -OutDir .\dist
 ```
 
-- `plugin/dsh-desktop-client/` — npm plugin source (pure ESM, zero build)
-- `scripts/build-portable.ps1` — portable-folder build script
-- The WebView2 client (C#) sources are tracked in the `dist/` artifacts and the client plan doc
+- `plugin/dsh-desktop-client/` — npm 插件源码（纯 ESM，零构建）
+- `scripts/build-portable.ps1` — 便携目录构建脚本
+- 客户端本体（WebView2 C# 源码）在 `dist/` 与 [client 分支文档](../../../client/PLAN.md) 中维护
 
-## Relationship to the official project
+## 与官方项目的关系
 
-Built on [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness), which provides the core agent capabilities, plugin system and Web UI. This project adds the **Windows desktop shell** (window, local server hosting, no-install packaging) and the companion client-management plugin.
+本项目基于 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 构建，官方项目提供核心智能体能力、插件系统与 Web UI；本项目负责 **Windows 桌面封装**（窗口、本地服务托管、免安装打包）与配套的客户端管理插件。
 
 ## Star History
 
@@ -158,5 +162,6 @@ Built on [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-
   </picture>
 </a>
 
-## License
+## 许可证
+
 MIT

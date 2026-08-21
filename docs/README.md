@@ -6,4 +6,4 @@
 | [User Guide](user-guide.en.md) | English | Install, configure, daily use, troubleshooting |
 | [PUBLISH.md](../PUBLISH.md) | 中文/English | 维护者：npm 发布、GitHub 仓库、插件市场收录流程 |
 | [README](../README.md) | 中文 | 项目总览与快速开始 |
-| [README (EN)](../README.md) | English | Project overview & quick start |
+| [README (EN)](../README.en.md) | English | Project overview & quick start |
