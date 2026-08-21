@@ -160,5 +160,3 @@ Built on [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-
 
 ## License
 MIT
-
-> 🧪 test push — safe to delete this line.

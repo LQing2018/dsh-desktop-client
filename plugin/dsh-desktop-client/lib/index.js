@@ -40,8 +40,14 @@ const DEFAULT_CLIENT_PATHS = [
   // portable build produced by this repo's build script
   "D:\\anzhuang\\deepseek-harness\\dist\\DeepSeek-Harness-Portable\\DeepSeek Harness.exe",
   "D:\\anzhuang\\deepseek-harness\\DeepSeek Harness.exe",
-  // any client sitting next to the running server
-  new URL("../../../DeepSeek Harness.exe", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")
+  // client next to the running server's node binary (portable app: the server's
+  // node.exe and the client exe share the portable root)
+  process.execPath ? join(dirname(process.execPath), "DeepSeek Harness.exe") : null,
+  // client at the server's current working directory
+  join(process.cwd(), "DeepSeek Harness.exe"),
+  // plugin installed into the app's own node_modules:
+  // <root>/node_modules/@lqing2018/dsh-desktop-client/lib -> 4 levels up = <root>
+  decodeURIComponent(new URL("../../../../DeepSeek Harness.exe", import.meta.url).pathname).replace(/^\/([A-Za-z]:)/, "$1")
 ].filter(Boolean);
 
 const DEFAULT_PORT = 3080;
